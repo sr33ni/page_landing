@@ -11,9 +11,12 @@
 
 html,
 body {
+  font-family: "PT Sans", sans-serif;
   font-size: 16px;
   scroll-behavior: smooth;
   font-weight: 400;
+  background-color: #000;
+  color: #fff;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -33,13 +36,48 @@ body {
   scrollbar-face-color: slategray;
   scrollbar-track-color: #b8c0c8;
   overflow-x: hidden;
-  background-color: #000;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+ul li,
+ol li {
+  list-style: none;
 }
 
 img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+.container {
+  max-width: 87.7777777778vw;
+  margin: 0 auto;
+  padding: 0 1.1111111111vw;
+}
+@media screen and (min-width:768px) {
+  .container {
+    padding: 0 1.6666666667vw;
+  }
+}
+@media screen and (min-width:950px) {
+  .container {
+    padding: 0 2.7777777778vw;
+  }
+}
+@media screen and (min-width:1199px) {
+  .container {
+    padding: 0 3.4722222222vw;
+  }
+}
+@media screen and (min-width:1320px) {
+  .container {
+    padding: 0 0.8333333333vw;
+  }
 }
 
 button {
@@ -79,22 +117,45 @@ button {
   padding: 2rem 0;
 }
 .section_middle-one {
-  height: calc(100vh + 105px);
+  height: calc(130vh + 105px);
+  justify-content: space-between;
 }
 .section_middle-one > article {
   flex: 1 1 40%;
-  background-color: #00181f;
+}
+.section_middle-one > article h2 {
+  font-size: 3.8194444444vw;
+  line-height: 4.5138888889vw;
+  font-weight: 700;
+  margin-bottom: 1.7361111111vw;
+}
+.section_middle-one > article p {
+  font-size: 1.5625rem;
+  font-weight: 400;
+  margin-bottom: 1.3888888889vw;
+  color: #767676;
+  line-height: 2.0833333333vw;
+}
+.section_middle-one > article ul li {
+  font-size: 1.5625rem;
+  font-weight: 400;
+  margin-bottom: 1.0416666667vw;
+  color: #767676;
+  line-height: 1.7361111111vw;
 }
 .section_middle-one > figure {
   flex: 1 1 60%;
 }
 .section_middle-one > figure img {
   max-width: 100%;
+  border-radius: 1.3888888889vw 1.3888888889vw 0 0;
+  overflow: hidden;
+  width: -webkit-fill-available;
 }
 
 .double {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }/*# sourceMappingURL=style.css.map */
