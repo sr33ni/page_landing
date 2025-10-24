@@ -14,6 +14,13 @@ $green: #68d7ac;
 $grey2: #00181f;
 $grey3: #373737;
 
+@mixin Flexbox($direction: row, $justify: flex-start, $align: stretch) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -96,27 +103,34 @@ button {
         margin: 0 auto;
         width: 80%;
         overflow: hidden;
+
         .marquee-items {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            // animation: marquee 20s linear infinite;
+            padding: 2rem 0;
+        }
+    }
+
+    &_middle-one {
+        height: calc(100vh + 105px);
+
+        > article {
+            flex: 1 1 40%;
+            background-color: $grey2;
         }
 
-        figure {
+        >figure {
+            flex: 1 1 60%;
             img {
-                width: 150px;
+                max-width: 100%;
             }
         }
+
     }
 }
 
-// @keyframes marquee {
-//     0% {
-//         transform: translateX(100%);
-//     }
+.double {
+    @include Flexbox(row, center, center);
 
-//     100% {
-//         transform: translateX(-100%);
-//     }
-// }
+}
