@@ -152,7 +152,12 @@ button {
     }
     
     &_blog{
-
+        h2{
+          font-size: vw(55);
+                line-height: vw(65);
+                font-weight: 700;
+                margin-bottom: vw(0);
+        }
     }
     
     &_marqee-slide {

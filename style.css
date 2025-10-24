@@ -234,6 +234,12 @@ button {
   width: 90%;
   right: 5%;
 }
+.section_blog h2 {
+  font-size: 3.8194444444vw;
+  line-height: 4.5138888889vw;
+  font-weight: 700;
+  margin-bottom: 0vw;
+}
 .section_marqee-slide {
   margin: 0 auto;
   width: 80%;
