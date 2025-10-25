@@ -155,14 +155,20 @@ button {
         height: auto;
 
         .landing_portion {
-            height: 60dvh;
+            height: auto;
+
+            @media #{$lg} {
+                height: 60dvh;
+            }
+
             align-content: center;
             justify-items: center;
 
             .details {
                 background-color: #00000069;
                 padding: vw(10);
-                border-radius: 21px;
+                border-radius: px2rem(8px);
+                font-size: px2rem(14px);
             }
 
             h1 {
@@ -183,25 +189,33 @@ button {
                 margin-bottom: vw(25);
                 text-align: center;
             }
-            span{
-                color:#848a87;
+
+            .button-container {
+                @include Flexbox(row, space-between, center);
+                gap: vw(20);
             }
-            .banner-btn{
+
+            span {
+                color: #848a87;
+            }
+
+            .banner-btn {
                 font-size: px2rem(16px);
                 line-height: normal;
                 font-weight: 500;
-                margin-bottom: vw(25);
                 text-align: center;
                 border-radius: px2rem(10px);
                 background-color: $white;
                 border: 2px solid #ecedec;
                 white-space: nowrap;
-                padding: vw(15) vw(9);
-                color: #36393b;
+                padding: vw(15) vw(20);
+                color: $black;
                 font-weight: 600;
             }
-            .banner-btn-two{
-                background-color:#064b1a;
+
+            .banner-btn-two {
+                padding: vw(15) vw(30);
+                background-color: #064b1a;
                 color: #fff;
                 border: 2px solid #236837;
             }
@@ -238,6 +252,7 @@ button {
             padding: vw(40) 0;
         }
 
+        align-content: center;
         height: auto;
         padding: vw(10) 0;
 
@@ -329,7 +344,7 @@ button {
 
     &_three_column {
         @media #{$md} {
-            height: 60dvh;
+            height: 70dvh;
             padding: vw(10) 0;
             gap: vw(10);
         }
@@ -371,6 +386,12 @@ button {
     }
 
     &_testimonial {
+        @media #{$md} {
+            height: 80dvh;
+        }
+
+        height: auto;
+
         >article {
             padding: vw(20);
             border-left: 1px solid $grey;
@@ -559,7 +580,12 @@ button {
 
     &_flex-masonry {
         justify-items: left;
+        align-content: center;
+                @media #{$md} {
+            height: 230dvh;
+        }
 
+        height: auto;
         >h2 {
             font-size: px2rem(50px);
             line-height: normal;
@@ -838,14 +864,21 @@ button {
 /*header start*/
 .header {
     overflow: hidden;
-    padding: 20px 10px;
+    padding: vw(30) vw(10);
+    display: flex;
+    flex-direction: column;
+
+    @media #{$md} {
+        padding: vw(30) vw(10);
+        display: block;
+    }
 
     a {
         color: $white;
         text-align: center;
-        padding: 12px;
+        padding: vw(15);
         text-decoration: none;
-        font-size: 16px;
+        font-size: px2rem(16px);
         line-height: 25px;
 
         @media #{$md} {
@@ -873,9 +906,12 @@ button {
 }
 
 .header-right {
-    float: none;
+    display: flex;
+    justify-content: space-between;
+    ;
 
     @media #{$md} {
+        display: block;
         float: right;
     }
 }
