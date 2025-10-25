@@ -102,6 +102,10 @@ img {
     margin: 0 auto;
     padding: 0 vw(16);
 
+    @media #{$xs} {
+        padding: 50px vw(24);
+    }
+
     @media #{$md} {
         padding: 0 vw(24);
     }
@@ -120,14 +124,14 @@ img {
 }
 
 .box-to-observe {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.6s ease-out;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
 }
 
 .box-to-observe.active {
-  opacity: 1;
-  transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
 }
 
 button {
@@ -155,18 +159,24 @@ button {
             align-content: center;
             justify-items: center;
 
-            .details{
+            .details {
                 background-color: #00000069;
                 padding: vw(10);
                 border-radius: 21px;
             }
-            h1{
-                font-size: px2rem(80px);
+
+            h1 {
+                font-size: px2rem(50px);
                 line-height: normal;
                 font-weight: 700;
                 margin-bottom: vw(25);
+
+                @media #{$lg} {
+                    font-size: px2rem(80px);
+                }
             }
-            .signdetails{
+
+            .signdetails {
                 font-size: px2rem(16px);
                 line-height: normal;
                 font-weight: 500;
@@ -337,14 +347,26 @@ button {
             }
         }
     }
-    &_testimonial{
-        > article{
+
+    &_testimonial {
+        >article {
             padding: vw(20);
-            p{
+            border-left: 1px solid $grey;
+
+            p {
                 font-size: px2rem(20px);
+                margin-bottom: vw(70);
+
+                &.sub {
+                    font-size: px2rem(18px);
+                    color: $grey;
+                    margin-bottom: vw(5);
+                }
             }
+
         }
     }
+
     &_table {
         >h2 {
             font-size: px2rem(50px);
@@ -390,7 +412,10 @@ button {
                         padding-inline: vw(30);
                         font-size: px2rem(16px);
                         color: $white;
-                        ;
+
+                        >img {
+                            margin: auto;
+                        }
 
                         &:not(:first-of-type) {
                             text-align: center;
@@ -604,60 +629,80 @@ button {
     }
 
     &_footer {
-        height: 120dvh;
+        @media #{$lg} {
+            height: 120dvh;
+            background-size: cover;
+        }
+
+        height: auto;
         background-image: url('./assets/footer-img.png');
         background-repeat: no-repeat;
-        background-size: cover;
         position: relative;
+        background-size: contain;
+        background-position: bottom;
 
         .footer_banner {
             height: 100%;
-            @include Flexbox(column,center , start );
+            @include Flexbox(column, center, start);
+
             h2 {
                 font-size: px2rem(50px);
                 line-height: normal;
-                 margin-bottom: vw(30);
+                margin-bottom: vw(30);
             }
-            .footer-content-width{
-                max-width: 600px ;
-                @include Flexbox(column, space-between ,start );
+
+            .footer-content-width {
+                max-width: 600px;
+                @include Flexbox(column, space-between, start);
                 gap: vw(30);
-                        @media #{$md} {
-                             @include Flexbox(row, space-between ,center );
-        }
+
+                @media #{$md} {
+                    @include Flexbox(row, space-between, center);
+                }
 
             }
-            .footer-section-one{
-                figure{
-                     margin-bottom: vw(20);
+
+            .footer-section-one {
+                figure {
+                    margin-bottom: vw(20);
                 }
-                > p{
+
+                >p {
                     font-size: px2rem(20px);
                     line-height: normal;
                     margin-bottom: vw(20);
-                    color: $grey;
+                    color: $white;
+
+                    @media #{$lg} {
+                        color: $grey;
+                    }
                 }
-                .icon-pack{
+
+                .icon-pack {
                     display: flex;
                     gap: 10px;
-                    > a{
+
+                    >a {
                         padding: 10px;
                         border-radius: px2rem(10px);
                         background-color: $black4
                     }
                 }
             }
-            .footer-section-two{
-                p{
+
+            .footer-section-two {
+                p {
                     margin-bottom: vw(20)
                 }
             }
-            .copy-section{
-                @include Flexbox(row,space-between , center );
+
+            .copy-section {
+                @include Flexbox(row, space-between, center);
                 width: 100%;
                 padding: vw(80) 0;
                 margin-top: auto;
-                a{
+
+                a {
                     color: $grey
                 }
             }
@@ -732,7 +777,8 @@ button {
         }
     }
 }
-.footer-button{
+
+.footer-button {
     padding: vw(20) vw(30);
     border-radius: px2rem(10px);
     background-color: $black3;
@@ -740,10 +786,12 @@ button {
     white-space: nowrap;
     color: $white;
     font-size: px2rem(20px);
-    &:not(:last-of-type){
+
+    &:not(:last-of-type) {
         margin-bottom: vw(30)
     }
 }
+
 .blur-button {
     background: $grey2;
     box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);
@@ -771,13 +819,20 @@ button {
     padding: 20px 10px;
 
     a {
-        float: left;
         color: $white;
         text-align: center;
         padding: 12px;
         text-decoration: none;
         font-size: 16px;
         line-height: 25px;
+
+        @media #{$md} {
+            float: left;
+        }
+
+        float: none;
+        display: block;
+        text-align: left;
 
         &:hover {
             border-bottom: 1px solid #fff;
@@ -796,18 +851,10 @@ button {
 }
 
 .header-right {
-    float: right;
-}
+    float: none;
 
-@media screen and (max-width: 500px) {
-    .header a {
-        float: none;
-        display: block;
-        text-align: left;
-    }
-
-    .header-right {
-        float: none;
+    @media #{$md} {
+        float: right;
     }
 }
 
@@ -849,9 +896,13 @@ button {
         overflow: hidden;
 
         &.one {
-            height: 80vh;
+            min-height: 70vh;
             display: flex;
             flex: 0 1 calc(100% / 3);
+
+            @media #{$lg} {
+                min-height: 70vh;
+            }
 
             figure {
                 margin-top: auto;
@@ -958,7 +1009,7 @@ button {
 
 .toggle-section {
     @media #{$md} {
-        max-width: 30%
+        max-width: fit-content;
     }
 
     display: inline-flex;
@@ -969,6 +1020,7 @@ button {
 
     >a {
         padding: 10px;
+        white-space: nowrap;
         color: $white;
         font-size: px2rem(20px);
         text-decoration: none;
