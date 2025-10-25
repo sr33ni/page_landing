@@ -9,7 +9,9 @@ const observer = new IntersectionObserver((entries) => {
     }
   });
 }, {
-  threshold: 0.2
+    root: null,
+  rootMargin: "0px 0px 20px 0px",
+  threshold: 0
 });
 
 observer.observe(box);
