@@ -121,6 +121,7 @@ button {
   line-height: normal;
   font-weight: 500;
   margin-bottom: 1.7361111111vw;
+  text-align: center;
 }
 .section_float_one {
   position: relative;
