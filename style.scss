@@ -140,6 +140,9 @@ button {
     outline: none;
     border: 0;
     -webkit-appearance: none;
+            @media #{$xs} {
+            padding: 10px 25px !important;
+        }
 }
 
 .section {
@@ -529,7 +532,7 @@ button {
             height: 50dvh;
         }
 
-        height: 50dvh;
+        height: auto;
         align-content: center;
 
         .card-placement {
