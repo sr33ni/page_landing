@@ -105,6 +105,23 @@ button {
   align-content: center;
   justify-items: center;
 }
+.section_landing .landing_portion .details {
+  background-color: rgba(0, 0, 0, 0.4117647059);
+  padding: 0.6944444444vw;
+  border-radius: 21px;
+}
+.section_landing .landing_portion h1 {
+  font-size: 5rem;
+  line-height: normal;
+  font-weight: 700;
+  margin-bottom: 1.7361111111vw;
+}
+.section_landing .landing_portion .signdetails {
+  font-size: 1rem;
+  line-height: normal;
+  font-weight: 500;
+  margin-bottom: 1.7361111111vw;
+}
 .section_float_one {
   position: relative;
   height: auto;
