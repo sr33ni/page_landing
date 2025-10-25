@@ -134,6 +134,28 @@ button {
   margin-bottom: 1.7361111111vw;
   text-align: center;
 }
+.section_landing .landing_portion span {
+  color: #848a87;
+}
+.section_landing .landing_portion .banner-btn {
+  font-size: 1rem;
+  line-height: normal;
+  font-weight: 500;
+  margin-bottom: 1.7361111111vw;
+  text-align: center;
+  border-radius: 0.625rem;
+  background-color: #fff;
+  border: 2px solid #ecedec;
+  white-space: nowrap;
+  padding: 1.0416666667vw 0.625vw;
+  color: #36393b;
+  font-weight: 600;
+}
+.section_landing .landing_portion .banner-btn-two {
+  background-color: #064b1a;
+  color: #fff;
+  border: 2px solid #236837;
+}
 .section_float_one {
   position: relative;
   height: auto;
