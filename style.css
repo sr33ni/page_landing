@@ -95,7 +95,7 @@ button {
   background-size: cover;
   height: auto;
 }
-@media screen and (min-width:768px) {
+@media screen and (min-width:950px) {
   .section_landing {
     height: 150dvh;
   }
@@ -104,7 +104,7 @@ button {
   position: relative;
   height: auto;
 }
-@media screen and (min-width:768px) {
+@media screen and (min-width:950px) {
   .section_float_one {
     height: 100dvh;
   }
@@ -116,7 +116,7 @@ button {
   width: 100%;
   right: 5%;
 }
-@media screen and (min-width:768px) {
+@media screen and (min-width:950px) {
   .section_float_one > img {
     position: absolute;
     width: 90%;
@@ -142,12 +142,25 @@ button {
   margin: 0 auto;
   width: 80%;
   overflow: hidden;
+  position: relative;
 }
 .section_marqee-slide .marquee-items {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 2rem 0;
+  animation: marquee 15s linear infinite;
+  width: -moz-max-content;
+  width: max-content;
+  gap: 2.7777777778vw;
+}
+@media screen and (min-width:768px) {
+  .section_marqee-slide .marquee-items figure > img {
+    width: 220px;
+  }
+}
+.section_marqee-slide:hover .marquee-items {
+  animation-play-state: paused;
 }
 .section_middle-one {
   height: auto;
@@ -191,10 +204,14 @@ button {
 }
 .section_three_column {
   height: auto;
+  padding: 6.9444444444vw 0;
+  gap: 2.0833333333vw;
 }
 @media screen and (min-width:768px) {
   .section_three_column {
     height: 60dvh;
+    padding: 0.6944444444vw 0;
+    gap: 0.6944444444vw;
   }
 }
 .section_grid-masonry {
@@ -224,7 +241,7 @@ button {
   margin-bottom: 1.3888888889vw;
 }
 .section_table {
-  height: 100dvh;
+  height: auto;
 }
 .section_table > h2 {
   font-size: 3.8194444444vw;
@@ -240,20 +257,26 @@ button {
   margin-bottom: 1.3888888889vw;
   text-align: center;
 }
+@media screen and (min-width:768px) {
+  .section_table {
+    height: 100dvh;
+  }
+}
 .section_table .table-container {
   width: 100%;
   text-align: center;
   overflow: auto;
-  padding: 3.4722222222vw 0;
+  padding: 5.5555555556vw 0;
+  overflow: auto;
 }
 .section_table .table-container table {
   width: 100%;
   margin: auto;
   border-collapse: collapse;
-  margin-bottom: 5.125rem;
   text-align: left;
   background-color: #05180a;
   border-radius: 1.3888888889vw;
+  min-width: 500px;
 }
 .section_table .table-container table tr td {
   padding-block: 1.3888888889vw;
@@ -269,16 +292,18 @@ button {
   background-color: rgba(19, 87, 37, 0.968627451);
   position: relative;
 }
-.section_table .table-container table tr td:nth-of-type(2)::after {
-  content: "";
-  display: block;
-  height: 50px;
-  position: absolute;
-  bottom: -50px;
-  left: 0;
-  right: 0;
-  background-color: rgba(19, 87, 37, 0.968627451);
-  border-radius: 0 0 30px 30px;
+@media screen and (min-width:768px) {
+  .section_table .table-container table tr td:nth-of-type(2)::after {
+    content: "";
+    display: block;
+    height: 50px;
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    right: 0;
+    background-color: rgba(19, 87, 37, 0.968627451);
+    border-radius: 0 0 30px 30px;
+  }
 }
 .section_table .table-container table tr th {
   padding-block: 1.18125rem;
@@ -297,19 +322,22 @@ button {
   font-size: 1.25rem;
   position: relative;
 }
-.section_table .table-container table tr th:nth-of-type(2)::after {
-  content: "";
-  display: block;
-  height: 50px;
-  position: absolute;
-  top: -50px;
-  left: 0;
-  right: 0;
-  background-color: rgba(19, 87, 37, 0.968627451);
-  border-radius: 30px 30px 0 0;
+@media screen and (min-width:768px) {
+  .section_table .table-container table tr th:nth-of-type(2)::after {
+    content: "";
+    display: block;
+    height: 50px;
+    position: absolute;
+    top: -50px;
+    left: 0;
+    right: 0;
+    background-color: rgba(19, 87, 37, 0.968627451);
+    border-radius: 30px 30px 0 0;
+  }
 }
 .section_placement {
-  height: auto;
+  height: 50dvh;
+  align-content: center;
 }
 @media screen and (min-width:768px) {
   .section_placement {
@@ -331,6 +359,13 @@ button {
   background-color: rgba(19, 87, 37, 0.968627451);
   padding: 2.0833333333vw 5.5555555556vw;
   border-radius: 1.3888888889vw;
+  max-width: 200px;
+}
+@media screen and (min-width:768px) {
+  .section_placement .card-placement .item-first {
+    max-width: -moz-fit-content;
+    max-width: fit-content;
+  }
 }
 .section_placement .card-placement .item-second {
   display: flex;
@@ -379,7 +414,7 @@ button {
 }
 @media screen and (min-width:768px) {
   .section_faq-section {
-    height: 150dvh;
+    height: 120dvh;
     padding: 3.4722222222vw 0;
   }
 }
@@ -445,10 +480,10 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  align-items: start;
 }
 .double.gap {
-  gap: 2.7777777778vw;
+  gap: 9.7222222222vw;
 }
 @media screen and (min-width:768px) {
   .double {
@@ -457,13 +492,16 @@ button {
     justify-content: space-between;
     align-items: center;
   }
+  .double.gap {
+    gap: 2.7777777778vw;
+  }
 }
 
 .three-column {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  align-items: start;
 }
 @media screen and (min-width:768px) {
   .three-column {
@@ -615,13 +653,18 @@ button {
 .card.format-float .float-card-details {
   position: absolute;
   right: 0;
-  position: absolute;
   left: 0;
   padding: 2.0833333333vw;
 }
 .card.format-float .float-card-details.bottom {
+  position: static;
   bottom: 0;
   background: linear-gradient(180deg, rgba(89, 89, 89, 0.73) 32%, rgb(54, 54, 54) 100%);
+}
+@media screen and (min-width:768px) {
+  .card.format-float .float-card-details.bottom {
+    position: absolute;
+  }
 }
 .card.format-float .float-card-details.top {
   top: 0;
@@ -646,30 +689,37 @@ button {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 40px;
+  gap: 2.7777777778vw;
 }
 .flex-spacing .flex-item {
   flex: 0 1 auto;
 }
-.flex-spacing .flex-item.one {
-  flex: 0 1 60%;
-}
-.flex-spacing .flex-item.two {
-  flex: 0 1 36%;
-}
-.flex-spacing .flex-item.fill {
-  flex: 0 1 108%;
-}
-.flex-spacing .flex-item img {
-  width: 100%;
+@media screen and (min-width:768px) {
+  .flex-spacing .flex-item.one {
+    flex: 0 1 60%;
+  }
+  .flex-spacing .flex-item.two {
+    flex: 0 1 36%;
+  }
+  .flex-spacing .flex-item.fill {
+    flex: 0 1 108%;
+  }
+  .flex-spacing .flex-item img {
+    width: 100%;
+  }
 }
 
 .toggle-section {
   display: inline-flex;
-  width: 30%;
+  width: 100%;
   padding: 10px;
   background-color: #191b18;
   border-radius: 1.875rem;
+}
+@media screen and (min-width:768px) {
+  .toggle-section {
+    max-width: 30%;
+  }
 }
 .toggle-section > a {
   padding: 10px;
@@ -705,4 +755,13 @@ button {
 .efx-slide:is(:hover, :focus-visible)::before {
   scale: 1 1;
   transform-origin: left;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }/*# sourceMappingURL=style.css.map */

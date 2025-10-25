@@ -136,7 +136,7 @@ button {
         background-repeat: no-repeat;
         background-size: cover;
 
-        @media #{$md} {
+        @media #{$lg} {
 
             height: 150dvh;
         }
@@ -148,14 +148,14 @@ button {
     &_float_one {
         position: relative;
 
-        @media #{$md} {
+        @media #{$lg} {
             height: 100dvh;
         }
 
         height: auto;
 
         >img {
-            @media #{$md} {
+            @media #{$lg} {
                 position: absolute;
                 width: 90%;
             }
@@ -186,18 +186,32 @@ button {
         }
     }
 
-    &_marqee-slide {
-        margin: 0 auto;
-        width: 80%;
-        overflow: hidden;
+&_marqee-slide {
+  margin: 0 auto;
+  width: 80%;
+  overflow: hidden;
+  position: relative;
 
-        .marquee-items {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 2rem 0;
+  .marquee-items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0;
+    animation: marquee 15s linear infinite;
+    width: max-content; 
+      gap: vw(40);
+      figure{
+        > img{
+                    @media #{$md} {
+            width: 220px;
         }
-    }
+        }
+      }
+  }
+  &:hover .marquee-items {
+    animation-play-state: paused;
+  }
+}
 
     &_middle-one {
         @media #{$md} {
@@ -251,9 +265,13 @@ button {
     &_three_column {
         @media #{$md} {
             height: 60dvh;
+            padding: vw(10) 0;
+            gap: vw(10);
         }
 
         height: auto;
+        padding: vw(100) 0;
+        gap: vw(30);
     }
 
     &_grid-masonry {
@@ -304,22 +322,27 @@ button {
             text-align: center;
         }
 
-        height: 100dvh;
+        @media #{$md} {
+            height: 100dvh;
+        }
+
+        height: auto;
 
         .table-container {
             width: 100%;
             text-align: center;
             overflow: auto;
-            padding: vw(50) 0;
+            padding: vw(80) 0;
+            overflow: auto;
 
             table {
                 width: 100%;
                 margin: auto;
                 border-collapse: collapse;
-                margin-bottom: 5.125rem;
                 text-align: left;
                 background-color: $green3;
                 border-radius: vw(20);
+                min-width: 500px;
 
                 tr {
                     td {
@@ -338,16 +361,18 @@ button {
                             background-color: $green4;
                             position: relative;
 
-                            &::after {
-                                content: "";
-                                display: block;
-                                height: 50px;
-                                position: absolute;
-                                bottom: -50px;
-                                left: 0;
-                                right: 0;
-                                background-color: $green4;
-                                border-radius: 0 0 30px 30px;
+                            @media #{$md} {
+                                &::after {
+                                    content: "";
+                                    display: block;
+                                    height: 50px;
+                                    position: absolute;
+                                    bottom: -50px;
+                                    left: 0;
+                                    right: 0;
+                                    background-color: $green4;
+                                    border-radius: 0 0 30px 30px;
+                                }
                             }
                         }
                     }
@@ -370,16 +395,18 @@ button {
                             font-size: px2rem(20px);
                             position: relative;
 
-                            &::after {
-                                content: "";
-                                display: block;
-                                height: 50px;
-                                position: absolute;
-                                top: -50px;
-                                left: 0;
-                                right: 0;
-                                background-color: $green4;
-                                border-radius: 30px 30px 0 0;
+                            @media #{$md} {
+                                &::after {
+                                    content: "";
+                                    display: block;
+                                    height: 50px;
+                                    position: absolute;
+                                    top: -50px;
+                                    left: 0;
+                                    right: 0;
+                                    background-color: $green4;
+                                    border-radius: 30px 30px 0 0;
+                                }
                             }
                         }
                     }
@@ -394,9 +421,11 @@ button {
             height: 50dvh;
         }
 
-        height: auto;
+        height: 50dvh;
+        align-content: center;
 
         .card-placement {
+
             @include Flexbox(row, space-between, center);
 
             .item-first {
@@ -405,6 +434,11 @@ button {
                 background-color: $green4;
                 padding: vw(30) vw(80);
                 border-radius: vw(20);
+                max-width: 200px;
+
+                @media #{$md} {
+                    max-width: fit-content;
+                }
             }
 
             .item-second {
@@ -458,9 +492,10 @@ button {
 
     &_faq-section {
         height: auto;
-align-content: center;
+        align-content: center;
+
         @media #{$md} {
-            height: 150dvh;
+            height: 120dvh;
             padding: vw(50) 0;
         }
 
@@ -540,19 +575,23 @@ align-content: center;
 }
 
 .double {
-    @include Flexbox(column, space-between, center);
+    @include Flexbox(column, space-between, start);
 
     &.gap {
-        gap: vw(40)
+        gap: vw(140);
     }
 
     @media #{$md} {
         @include Flexbox(row, space-between, center);
+
+        &.gap {
+            gap: vw(40);
+        }
     }
 }
 
 .three-column {
-    @include Flexbox(column, space-between, center);
+    @include Flexbox(column, space-between, start);
 
     @media #{$md} {
         @include Flexbox(row, space-between, center);
@@ -744,11 +783,15 @@ align-content: center;
         .float-card-details {
             position: absolute;
             right: 0;
-            position: absolute;
             left: 0;
             padding: vw(30);
 
             &.bottom {
+                @media #{$md} {
+                    position: absolute;
+                }
+
+                position: static;
                 bottom: 0;
                 background: linear-gradient(180deg, rgba(89, 89, 89, 0.73) 32%, rgba(54, 54, 54, 1) 100%);
             }
@@ -782,33 +825,41 @@ align-content: center;
 .flex-spacing {
     @include Flexbox(row, space-between, center);
     flex-wrap: wrap;
-    gap: 40px;
+    gap: vw(40);
 
     .flex-item {
         flex: 0 1 auto;
 
-        &.one {
-            flex: 0 1 60%;
+        @media #{$md} {
+            &.one {
+                flex: 0 1 60%;
+            }
+
+            &.two {
+
+                flex: 0 1 36%;
+            }
+
+            &.fill {
+                flex: 0 1 108%;
+            }
+
+            img {
+                width: 100%;
+            }
         }
 
-        &.two {
 
-            flex: 0 1 36%;
-        }
-
-        &.fill {
-            flex: 0 1 108%;
-        }
-
-        img {
-            width: 100%;
-        }
     }
 }
 
 .toggle-section {
+    @media #{$md} {
+        max-width: 30%
+    }
+
     display: inline-flex;
-    width: 30%;
+    width: 100%;
     padding: 10px;
     background-color: $grey4;
     border-radius: px2rem(30px);
@@ -854,4 +905,12 @@ align-content: center;
             transform-origin: left;
         }
     }
+}
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
