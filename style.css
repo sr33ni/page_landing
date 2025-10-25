@@ -122,11 +122,21 @@ button {
     width: 90%;
   }
 }
+.section_blog {
+  height: auto;
+  padding: 0.6944444444vw 0;
+}
+@media screen and (min-width:768px) {
+  .section_blog {
+    height: 140dvh;
+    padding: 2.7777777778vw 0;
+  }
+}
 .section_blog h2 {
   font-size: 3.8194444444vw;
   line-height: normal;
   font-weight: 700;
-  margin-bottom: 0vw;
+  margin-bottom: 2.0833333333vw;
 }
 .section_marqee-slide {
   margin: 0 auto;
@@ -189,11 +199,6 @@ button {
 }
 .section_grid-masonry {
   height: auto;
-}
-@media screen and (min-width:768px) {
-  .section_grid-masonry {
-    height: 100dvh;
-  }
 }
 .section_banner-media {
   height: auto;
@@ -416,6 +421,9 @@ button {
   justify-content: space-between;
   align-items: center;
 }
+.double.gap {
+  gap: 2.7777777778vw;
+}
 @media screen and (min-width:768px) {
   .double {
     display: flex;
@@ -542,10 +550,41 @@ button {
   color: #767676;
   line-height: normal;
 }
+.card.format-two h3 {
+  font-size: 2.25rem;
+  margin-bottom: 2.0833333333vw;
+}
+.card.format-two p {
+  font-size: 1.25rem;
+  color: #767676;
+  line-height: normal;
+  margin-bottom: 2.0833333333vw;
+}
 .card.format-float {
   position: relative;
   border-radius: 2.0833333333vw;
   overflow: hidden;
+}
+.card.format-float.one {
+  height: 80vh;
+  display: flex;
+  flex: 0 1 33.3333333333%;
+}
+.card.format-float.one figure {
+  margin-top: auto;
+  width: 100%;
+}
+.card.format-float.one figure img {
+  width: 100%;
+}
+.card.format-float.grad-top.green {
+  background: linear-gradient(180deg, rgba(59, 184, 112, 0.6) 0%, rgba(47, 138, 84, 0.4) 40%, rgba(12, 42, 21, 0.2) 100%);
+}
+.card.format-float.grad-top.blue {
+  background: linear-gradient(180deg, rgba(123, 77, 255, 0.6) 0%, rgba(83, 38, 212, 0.4) 45%, rgba(26, 15, 77, 0.2) 100%);
+}
+.card.format-float.grad-top.gold {
+  background: linear-gradient(180deg, rgba(221, 178, 74, 0.6) 0%, rgba(164, 123, 50, 0.4) 50%, rgba(61, 42, 14, 0.2) 100%);
 }
 .card.format-float .float-card-details {
   position: absolute;
@@ -553,10 +592,13 @@ button {
   position: absolute;
   left: 0;
   padding: 2.0833333333vw;
-  background: linear-gradient(180deg, rgba(89, 89, 89, 0.73) 32%, rgb(54, 54, 54) 100%);
 }
 .card.format-float .float-card-details.bottom {
   bottom: 0;
+  background: linear-gradient(180deg, rgba(89, 89, 89, 0.73) 32%, rgb(54, 54, 54) 100%);
+}
+.card.format-float .float-card-details.top {
+  top: 0;
 }
 .card.format-float .float-card-details h3 {
   font-size: 1.875rem;

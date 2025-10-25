@@ -170,11 +170,19 @@ button {
     }
 
     &_blog {
+        @media #{$md} {
+            height: 140dvh;
+            padding: vw(40) 0;
+        }
+
+        height: auto;
+        padding: vw(10) 0;
+
         h2 {
             font-size: vw(55);
             line-height: normal;
             font-weight: 700;
-            margin-bottom: vw(0);
+            margin-bottom: vw(30);
         }
     }
 
@@ -241,21 +249,23 @@ button {
     }
 
     &_three_column {
-                    @media #{$md} {
+        @media #{$md} {
             height: 60dvh;
         }
+
         height: auto;
     }
 
     &_grid-masonry {
-        @media #{$md} {
-        height: 100dvh;}
+
         height: auto;
     }
 
     &_banner-media {
         @media #{$md} {
-        height: 110dvh;}
+            height: 110dvh;
+        }
+
         height: auto;
 
         .media-section {
@@ -381,7 +391,9 @@ button {
 
     &_placement {
         @media #{$md} {
-        height: 50dvh;}
+            height: 50dvh;
+        }
+
         height: auto;
 
         .card-placement {
@@ -505,6 +517,10 @@ button {
 .double {
     @include Flexbox(column, space-between, center);
 
+    &.gap {
+        gap: vw(40)
+    }
+
     @media #{$md} {
         @include Flexbox(row, space-between, center);
     }
@@ -548,15 +564,16 @@ button {
             background-image: url(./assets/icons-3.png);
         }
     }
-    
+
     &:after {
         content: "";
         position: absolute;
         background-repeat: no-repeat;
         inset: 0;
-            @media #{$md} {
-        box-shadow: 0px -1px 240px 34px $green2;
-    }
+
+        @media #{$md} {
+            box-shadow: 0px -1px 240px 34px $green2;
+        }
     }
 }
 
@@ -644,9 +661,17 @@ button {
     }
 
     &.format-two {
-        h3 {}
+        h3 {
+            font-size: px2rem(36px);
+            margin-bottom: vw(30);
+        }
 
-        p {}
+        p {
+            font-size: px2rem(20px);
+            color: $grey;
+            line-height: normal;
+            margin-bottom: vw(30);
+        }
 
         img {}
     }
@@ -656,16 +681,56 @@ button {
         border-radius: vw(30);
         overflow: hidden;
 
+        &.one {
+            height: 80vh;
+            display: flex;
+            flex: 0 1 calc(100% / 3);
+
+            figure {
+                margin-top: auto;
+                width: 100%;
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
+
+        &.grad-top {
+            &.green {
+                background: linear-gradient(180deg, rgba(59, 184, 112, 0.6) 0%, rgba(47, 138, 84, 0.4) 40%, rgba(12, 42, 21, 0.2) 100%);
+            }
+
+            &.blue {
+                background: linear-gradient(180deg,
+                        rgba(123, 77, 255, 0.6) 0%,
+                        rgba(83, 38, 212, 0.4) 45%,
+                        rgba(26, 15, 77, 0.2) 100%);
+            }
+
+            &.gold {
+                background: linear-gradient(180deg,
+                        rgba(221, 178, 74, 0.6) 0%,
+                        rgba(164, 123, 50, 0.4) 50%,
+                        rgba(61, 42, 14, 0.2) 100%);
+            }
+        }
+
         .float-card-details {
             position: absolute;
             right: 0;
             position: absolute;
             left: 0;
             padding: vw(30);
-            background: linear-gradient(180deg, rgba(89, 89, 89, 0.73) 32%, rgba(54, 54, 54, 1) 100%);
 
             &.bottom {
                 bottom: 0;
+                background: linear-gradient(180deg, rgba(89, 89, 89, 0.73) 32%, rgba(54, 54, 54, 1) 100%);
+            }
+
+            &.top {
+                top: 0;
+
             }
 
             h3 {
