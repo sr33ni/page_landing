@@ -457,31 +457,56 @@ button {
     }
 
     &_faq-section {
+        height: auto;
+align-content: center;
+        @media #{$md} {
+            height: 150dvh;
+            padding: vw(50) 0;
+        }
+
+        >h2 {
+            font-size: vw(55);
+            line-height: normal;
+            font-weight: 700;
+            margin-bottom: vw(20);
+            text-align: center;
+        }
+
+        >p {
+            font-size: px2rem(20px);
+            color: $grey;
+            line-height: normal;
+            margin-bottom: vw(20);
+            text-align: center;
+        }
+
         .list {
             margin-top: 2.0625rem;
+            max-width: 991px;
+            margin: 0 auto;
 
             .accordion_list {
-                border: 1px solid var(--secondary-two-color);
                 border-radius: 8px;
                 margin-bottom: 0.9375rem;
+                background-color: $black3;
 
                 summary {
                     list-style: none;
                     display: flex;
                     align-items: center;
-                    padding-block: 1.5rem;
-                    padding-inline: 2rem;
+                    padding-block: 1rem;
+                    padding-inline: 1rem;
                     color: var(--default-black);
                     font-weight: 700;
-                    font-size: var(--font-size-20-23px);
+                    font-size: px2rem(18px);
                     justify-content: space-between;
 
                     &::after {
-                        content: "+";
+                        content: url(./assets/angle-down-solid-full.svg);
                         display: inline-block;
-                        width: unset;
+                        width: 20px;
                         height: unset;
-                        font-size: 30px;
+                        font-size: 20px;
                         font-weight: 300;
                         cursor: pointer;
                     }
@@ -489,13 +514,13 @@ button {
 
                 p {
                     padding: 1.5rem;
-                    font-size: var(--font-size-16-18px);
+                    font-size: px2rem(20px);
                 }
 
                 &[open] {
                     summary {
                         &::after {
-                            content: "-";
+                            rotate: 180deg;
                         }
                     }
                 }
@@ -782,7 +807,51 @@ button {
 }
 
 .toggle-section {
+    display: inline-flex;
+    width: 30%;
+    padding: 10px;
+    background-color: $grey4;
+    border-radius: px2rem(30px);
+
     >a {
-        &.active {}
+        padding: 10px;
+        color: $white;
+        font-size: px2rem(20px);
+        text-decoration: none;
+        flex: 1 1 calc(100% / 2);
+        display: inline-block;
+        border-radius: px2rem(30px);
+
+        &.active {
+            background-color: $black;
+        }
+    }
+}
+
+.efx-slide {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        background-color: $green2;
+        inset: 0;
+        scale: 0 1;
+        transform-origin: right;
+        transition: scale 450ms;
+    }
+
+    &:hover {
+        color: $green4 !important;
+    }
+
+    &:is(:hover, :focus-visible) {
+        &::before {
+            scale: 1 1;
+            transform-origin: left;
+        }
     }
 }
