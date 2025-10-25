@@ -85,11 +85,11 @@ ol {
     }
 }
 
-a {
-    &:active {}
+// a {
+//     &:active {}
 
-    &:hover {}
-}
+//     &:hover {}
+// }
 
 img {
     display: block;
@@ -945,7 +945,6 @@ button {
             margin-bottom: vw(30);
         }
 
-        img {}
     }
 
     &.format-float {
@@ -954,12 +953,12 @@ button {
         overflow: hidden;
 
         &.one {
-            min-height: 70vh;
+            min-height: 80vh;
             display: flex;
             flex: 0 1 calc(100% / 3);
 
             @media #{$lg} {
-                min-height: 70vh;
+                min-height: 90vh;
             }
 
             figure {
@@ -1017,8 +1016,6 @@ button {
                 font-size: px2rem(30px);
                 margin-bottom: vw(10);
             }
-
-            p {}
         }
     }
 }

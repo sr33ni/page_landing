@@ -840,13 +840,13 @@ button {
   overflow: hidden;
 }
 .card.format-float.one {
-  min-height: 70vh;
+  min-height: 80vh;
   display: flex;
   flex: 0 1 33.3333333333%;
 }
 @media screen and (min-width:950px) {
   .card.format-float.one {
-    min-height: 70vh;
+    min-height: 90vh;
   }
 }
 .card.format-float.one figure {
@@ -888,6 +888,7 @@ button {
   font-size: 1.875rem;
   margin-bottom: 0.6944444444vw;
 }
+
 .grid-spacing {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
