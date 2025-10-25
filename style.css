@@ -178,6 +178,13 @@ button {
   align-items: center;
 }
 
+.double_two {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
 .three-column {
   display: flex;
   flex-direction: row;

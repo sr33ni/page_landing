@@ -238,7 +238,9 @@ button {
 .double {
     @include Flexbox(row, space-between, center);
 }
-
+.double_two {
+    @include Flexbox(row, space-between, baseline);
+}
 .three-column {
     @include Flexbox(row, space-between, center);
 }
