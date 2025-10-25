@@ -100,6 +100,11 @@ button {
     height: 150dvh;
   }
 }
+.section_landing .landing_portion {
+  height: 60dvh;
+  align-content: center;
+  justify-items: center;
+}
 .section_float_one {
   position: relative;
   height: auto;
@@ -239,6 +244,12 @@ button {
   color: #767676;
   line-height: normal;
   margin-bottom: 1.3888888889vw;
+}
+.section_testimonial > article {
+  padding: 1.3888888889vw;
+}
+.section_testimonial > article p {
+  font-size: 1.25rem;
 }
 .section_table {
   height: auto;
@@ -469,11 +480,73 @@ button {
 .section_faq-section .list .accordion_list[open] summary::after {
   rotate: 180deg;
 }
-.section_footer .footer_banner {
+.section_footer {
   height: 120dvh;
   background-image: url("./assets/footer-img.png");
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
+}
+.section_footer .footer_banner {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+.section_footer .footer_banner h2 {
+  font-size: 3.125rem;
+  line-height: normal;
+  margin-bottom: 2.0833333333vw;
+}
+.section_footer .footer_banner .footer-content-width {
+  max-width: 600px;
+  display: flex;
+  flex-direction: colum;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2.0833333333vw;
+}
+@media screen and (min-width:768px) {
+  .section_footer .footer_banner .footer-content-width {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+.section_footer .footer_banner .footer-section-one figure {
+  margin-bottom: 1.3888888889vw;
+}
+.section_footer .footer_banner .footer-section-one > p {
+  font-size: 1.25rem;
+  line-height: normal;
+  margin-bottom: 1.3888888889vw;
+  color: #767676;
+}
+.section_footer .footer_banner .footer-section-one .icon-pack {
+  display: flex;
+  gap: 10px;
+}
+.section_footer .footer_banner .footer-section-one .icon-pack > a {
+  padding: 10px;
+  border-radius: 0.625rem;
+  background-color: #262626;
+}
+.section_footer .footer_banner .footer-section-two p {
+  margin-bottom: 1.3888888889vw;
+}
+.section_footer .footer_banner .copy-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 5.5555555556vw 0;
+  margin-top: auto;
+}
+.section_footer .footer_banner .copy-section a {
+  color: #767676;
 }
 
 .double {
@@ -544,6 +617,19 @@ button {
   .icon:after {
     box-shadow: 0px -1px 240px 34px #39ff14;
   }
+}
+
+.footer-button {
+  padding: 1.3888888889vw 2.0833333333vw;
+  border-radius: 0.625rem;
+  background-color: #0f0f0f;
+  border: 1px solid #262626;
+  white-space: nowrap;
+  color: #fff;
+  font-size: 1.25rem;
+}
+.footer-button:not(:last-of-type) {
+  margin-bottom: 2.0833333333vw;
 }
 
 .blur-button {

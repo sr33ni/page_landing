@@ -143,6 +143,11 @@ button {
 
         height: auto;
 
+        .landing_portion {
+            height: 60dvh;
+            align-content: center;
+            justify-items: center;
+        }
     }
 
     &_float_one {
@@ -186,32 +191,34 @@ button {
         }
     }
 
-&_marqee-slide {
-  margin: 0 auto;
-  width: 80%;
-  overflow: hidden;
-  position: relative;
+    &_marqee-slide {
+        margin: 0 auto;
+        width: 80%;
+        overflow: hidden;
+        position: relative;
 
-  .marquee-items {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2rem 0;
-    animation: marquee 15s linear infinite;
-    width: max-content; 
-      gap: vw(40);
-      figure{
-        > img{
+        .marquee-items {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 0;
+            animation: marquee 15s linear infinite;
+            width: max-content;
+            gap: vw(40);
+
+            figure {
+                >img {
                     @media #{$md} {
-            width: 220px;
+                        width: 220px;
+                    }
+                }
+            }
         }
+
+        &:hover .marquee-items {
+            animation-play-state: paused;
         }
-      }
-  }
-  &:hover .marquee-items {
-    animation-play-state: paused;
-  }
-}
+    }
 
     &_middle-one {
         @media #{$md} {
@@ -304,7 +311,14 @@ button {
             }
         }
     }
-
+    &_testimonial{
+        > article{
+            padding: vw(20);
+            p{
+                font-size: px2rem(20px);
+            }
+        }
+    }
     &_table {
         >h2 {
             font-size: vw(55);
@@ -564,11 +578,63 @@ button {
     }
 
     &_footer {
+        height: 120dvh;
+        background-image: url('./assets/footer-img.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+
         .footer_banner {
-            height: 120dvh;
-            background-image: url('./assets/footer-img.png');
-            background-repeat: no-repeat;
-            background-size: cover;
+            height: 100%;
+            @include Flexbox(column,center , start );
+            h2 {
+                font-size: px2rem(50px);
+                line-height: normal;
+                 margin-bottom: vw(30);
+            }
+            .footer-content-width{
+                max-width: 600px ;
+                @include Flexbox(colum, space-between ,center );
+                gap: vw(30);
+                        @media #{$md} {
+                             @include Flexbox(row, space-between ,center );
+        }
+
+            }
+            .footer-section-one{
+                figure{
+                     margin-bottom: vw(20);
+                }
+                > p{
+                    font-size: px2rem(20px);
+                    line-height: normal;
+                    margin-bottom: vw(20);
+                    color: $grey;
+                }
+                .icon-pack{
+                    display: flex;
+                    gap: 10px;
+                    > a{
+                        padding: 10px;
+                        border-radius: px2rem(10px);
+                        background-color: $black4
+                    }
+                }
+            }
+            .footer-section-two{
+                p{
+                    margin-bottom: vw(20)
+                }
+            }
+            .copy-section{
+                @include Flexbox(row,space-between , center );
+                width: 100%;
+                padding: vw(80) 0;
+                margin-top: auto;
+                a{
+                    color: $grey
+                }
+            }
         }
 
     }
@@ -640,7 +706,18 @@ button {
         }
     }
 }
-
+.footer-button{
+    padding: vw(20) vw(30);
+    border-radius: px2rem(10px);
+    background-color: $black3;
+    border: 1px solid $black4;
+    white-space: nowrap;
+    color: $white;
+    font-size: px2rem(20px);
+    &:not(:last-of-type){
+        margin-bottom: vw(30)
+    }
+}
 .blur-button {
     background: $grey2;
     box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);
@@ -906,11 +983,13 @@ button {
         }
     }
 }
+
 @keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
 }
