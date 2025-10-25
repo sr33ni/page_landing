@@ -140,9 +140,6 @@ button {
     outline: none;
     border: 0;
     -webkit-appearance: none;
-            @media #{$xs} {
-            padding: 10px 25px !important;
-        }
 }
 
 .section {
