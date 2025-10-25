@@ -502,7 +502,7 @@ button {
 }
 @media screen and (min-width:768px) {
   .section_flex-masonry {
-    height: 230dvh;
+    height: 205dvh;
   }
 }
 .section_flex-masonry > h2 {
