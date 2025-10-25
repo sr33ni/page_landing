@@ -36,7 +36,6 @@ $bodyFontSize: 16px;
     @return calc($px / $bodyFontSize) * 1rem;
 }
 
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -137,7 +136,6 @@ button {
         background-size: cover;
 
         @media #{$lg} {
-
             height: 150dvh;
         }
 
@@ -147,6 +145,25 @@ button {
             height: 60dvh;
             align-content: center;
             justify-items: center;
+
+            .details{
+                background-color: #00000069;
+                padding: vw(10);
+                border-radius: 21px;
+            }
+            h1{
+                font-size: px2rem(80px);
+                line-height: normal;
+                font-weight: 700;
+                margin-bottom: vw(25);
+            }
+            .signdetails{
+                font-size: px2rem(16px);
+                line-height: normal;
+                font-weight: 500;
+                margin-bottom: vw(25);
+                text-align: center;
+            }
         }
     }
 
