@@ -300,9 +300,9 @@ button {
 .section_banner-media {
   height: auto;
 }
-@media screen and (min-width:768px) {
+@media screen and (min-width:1320px) {
   .section_banner-media {
-    height: 110dvh;
+    height: 115dvh;
   }
 }
 .section_banner-media .media-section {
@@ -319,6 +319,11 @@ button {
   color: #767676;
   line-height: normal;
   margin-bottom: 1.3888888889vw;
+}
+@media screen and (min-width:1320px) {
+  .section_banner-media .media-section figure > img {
+    width: 100%;
+  }
 }
 .section_testimonial {
   height: auto;
@@ -358,7 +363,7 @@ button {
   margin-bottom: 1.3888888889vw;
   text-align: center;
 }
-@media screen and (min-width:768px) {
+@media screen and (min-width:1320px) {
   .section_table {
     height: 100dvh;
   }

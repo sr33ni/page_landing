@@ -360,8 +360,8 @@ button {
     }
 
     &_banner-media {
-        @media #{$md} {
-            height: 110dvh;
+        @media #{$xxl} {
+            height: 115dvh;
         }
 
         height: auto;
@@ -381,6 +381,14 @@ button {
                 color: $grey;
                 line-height: normal;
                 margin-bottom: vw(20);
+            }
+
+            figure {
+                >img {
+                    @media #{$xxl} {
+                       width: 100%;
+                    }
+                }
             }
         }
     }
@@ -427,7 +435,7 @@ button {
             text-align: center;
         }
 
-        @media #{$md} {
+        @media #{$xxl} {
             height: 100dvh;
         }
 
@@ -581,11 +589,13 @@ button {
     &_flex-masonry {
         justify-items: left;
         align-content: center;
-                @media #{$md} {
+
+        @media #{$md} {
             height: 205dvh;
         }
 
         height: auto;
+
         >h2 {
             font-size: px2rem(50px);
             line-height: normal;
